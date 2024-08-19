@@ -1,0 +1,6 @@
+---
+en:
+  decidim:
+    components:
+      guest_meeting_registration:
+        name: GuestMeetingRegistration
