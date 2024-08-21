@@ -15,7 +15,16 @@ en:
           edit:
             title: Meeting Guest Registration
             update: Update
+      cancellation:
+        error: There was a problem canceling your meeting registration
+        success: You have successfully cancelled your meeting registration
       guest_meeting_registration_mailer:
+        send_cancellation_request:
+          action: Cancel my registration
+          greeting: Welcome %{recipient}!
+          instruction: 'You can cancel meeting attendance at anytime accessing the
+            link below:'
+          subject: Cancellation link for %{meeting_title}
         send_confirmation:
           action: Confirm my registration
           greeting: Welcome %{recipient}!
