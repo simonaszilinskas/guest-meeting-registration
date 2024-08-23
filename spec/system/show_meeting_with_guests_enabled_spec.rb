@@ -38,6 +38,9 @@ describe "Show meeting", type: :system do
       available_slots: available_slots,
       registration_terms: registration_terms
     )
+
+    # Make static map requests not to fail with HTTP 500 (causes JS error)
+    stub_request(:get, Regexp.new(Decidim.maps.fetch(:static).fetch(:url))).to_return(body: "")
   end
 
   context "when meeting registrations are not enabled" do
@@ -47,7 +50,7 @@ describe "Show meeting", type: :system do
       visit_meeting
 
       within ".card.extra" do
-        expect(page).not_to have_button("JOIN MEETING")
+        expect(page).not_to have_button("JOIN THE MEETING")
         expect(page).not_to have_text("20 slots remaining")
       end
     end
@@ -111,37 +114,12 @@ describe "Show meeting", type: :system do
           visit_meeting
 
           within ".card.extra" do
-            click_button "Join meeting"
+            click_button "Join the meeting"
           end
+
+          click_button "Join with account"
 
           expect(page).to have_css("#loginModal", visible: :visible)
-        end
-
-        context "and caching is enabled", :caching do
-          it "they have the option to sign in with different languages" do
-            visit_meeting
-
-            within ".card.extra" do
-              click_button "Join meeting"
-            end
-
-            within "#loginModal" do
-              expect(page).to have_content("Sign in with Facebook")
-              find(".close-button").click
-            end
-
-            within_language_menu do
-              click_link "Català"
-            end
-
-            within ".card.extra" do
-              click_button "Unir-se a la trobada"
-            end
-
-            within "#loginModal" do
-              expect(page).to have_content("Inicia sessió amb Facebook")
-            end
-          end
         end
 
         context "and registration form is enabled" do

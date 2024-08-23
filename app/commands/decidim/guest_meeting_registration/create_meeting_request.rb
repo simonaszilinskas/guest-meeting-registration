@@ -10,6 +10,7 @@ module Decidim
 
       def call
         return broadcast(:invalid_form) if registration_form.invalid?
+        return broadcast(:invalid) if meeting.on_different_platform?
         return broadcast(:invalid) unless meeting.registrations_enabled? && meeting.has_available_slots?
         return broadcast(:invalid) if Decidim::GuestMeetingRegistration::RegistrationRequest.exists?(meeting: meeting, organization: current_organization,
                                                                                                      email: registration_form.email)
@@ -48,6 +49,7 @@ module Decidim
         registration_request.name = registration_form.name
         registration_request.form_data = registration_form.submitted_params
         registration_request.cancellation_token = SecureRandom.hex
+        registration_request.session_token = registration_form.context&.session_token
 
         registration_request.save!
         registration_request
