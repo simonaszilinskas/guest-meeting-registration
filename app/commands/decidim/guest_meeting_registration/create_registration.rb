@@ -42,17 +42,16 @@ module Decidim
         @registration_form ||= begin
           form_data = registration_request.form_data.with_indifferent_access
           form_data.merge!({ id: registration_request.id })
-          form = form_object.from_params(form_data, **form_context)
-          form.map_model(registration_request)
+          form = form_object.from_params(form_data).with_context(form_context)
           form
         end
       end
 
       def form_object
         @form_object ||= if meeting.registration_form_enabled?
-                           form(Decidim::GuestMeetingRegistration::QuestionnaireForm)
+                           Decidim::GuestMeetingRegistration::QuestionnaireForm
                          else
-                           form(Decidim::GuestMeetingRegistration::SimpleForm)
+                           Decidim::GuestMeetingRegistration::SimpleForm
                          end
       end
 
