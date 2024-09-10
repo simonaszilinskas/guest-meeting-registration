@@ -1,0 +1,43 @@
+---
+fr:
+  decidim:
+    components:
+      guest_meeting_registration:
+        name: InscriptionAuxRencontresSansCompte
+    guest_meeting_registration:
+      admin:
+        guest_meeting_session:
+          disable_account_confirmation_html: Désactiver la popup demandant aux gens de choisir s'ils ont ou non un compte
+          enable_cancellation_help_html: Permettre aux utilisateurs d'annuler leur inscription
+          enable_guest_registration_help_html: Autoriser les utilisateurs non connectés à s'inscrire aux réunions
+          enable_registration_confirmation_help_html: Rentre la confirmation de l'inscription à l'évènement obligatoire
+        guest_meeting_settings:
+          edit:
+            title: Inscription à la rencontre sans connexion
+            update: Mettre à jour
+      cancellation:
+        error: Il y a eu un problème lors de l'annulation de votre inscription à la réunion
+        success: Vous avez annulé votre inscription à la réunion
+      guest_meeting_registration_mailer:
+        send_cancellation_request:
+          action: Annuler mon inscription
+          greeting: Bienvenue %{recipient} !
+          instruction: 'Vous pouvez à tout moment annuler votre participation à la réunion en utilisant le lien ci-dessous :'
+          subject: Lien d'annulation pour %{meeting_title}
+        send_confirmation:
+          action: Confirmer mon inscription
+          greeting: Bienvenue %{recipient} !
+          instruction: 'Vous pouvez confirmer votre adresse e-mail en cliquant sur le lien ci-dessous :'
+          subject: Confirmez votre e-mail pour participer à %{meeting_title}
+      join_meeting_button:
+        cancel: Annuler
+        cancel_guest_confirm:
+          leave: Annuler votre inscription
+          leave_confirmation: Êtes-vous sûr de vouloir annuler votre inscription à cette rencontre ?
+        description_html: Si vous avez déjà un compte, choisissez l'option <strong>%{i_have_account}</strong> . Sinon, vous pouvez <strong>%{login_as_guest}</strong>
+        i_have_account: S'inscrire avec un compte Decidim
+        join: S'inscrire à la rencontre
+        login_as_guest: S'inscrire en tant qu'invité
+        title: Veuillez choisir un mode d'inscription
+      menu:
+        guest_meeting_registration_settings: Paramètres des inscriptions des invités
