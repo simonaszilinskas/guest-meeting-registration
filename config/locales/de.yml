@@ -1,5 +1,5 @@
 ---
-de-AT:
+de:
   decidim:
     components:
       guest_meeting_registration:
@@ -33,7 +33,7 @@ de-AT:
         cancel: Abbrechen
         cancel_guest_confirm:
           leave: Anmeldung stornieren
-          leave_confirmation: Sind Sie sicher dass Sie sich von dieser Veranstaltung abmelden möchten?
+          leave_confirmation: Sind Sie sicher, dass Sie sich von dieser Veranstaltung abmelden möchten?
         description_html: Wenn Sie bereits ein Konto haben oder weiter zu dieser Veranstaltung beitragen möchten, wählen Sie die <strong>%{i_have_account}</strong> Option. Ansonsten können Sie <strong>%{login_as_guest}</strong>
         i_have_account: Mit Konto anmelden
         join: Zur Veranstaltung anmelden
