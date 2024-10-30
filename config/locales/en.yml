@@ -15,10 +15,13 @@ en:
     guest_meeting_registration:
       admin:
         guest_meeting_session:
-          disable_account_confirmation_html: Enabling this setting will hide the account selection pop-up for meeting registration
+          disable_account_confirmation_html: Enabling this setting will hide the account
+            selection pop-up for meeting registration
           enable_cancellation_help_html: Allow users to cancel their registration
-          enable_guest_registration_help_html: Unregistered users will be asked for a name and email
-          enable_registration_confirmation_help_html: Send email verification to confirm meeting registration
+          enable_guest_registration_help_html: Unregistered users will be asked for
+            a name and email
+          enable_registration_confirmation_help_html: Send email verification to confirm
+            meeting registration
         guest_meeting_settings:
           edit:
             title: Meeting Guest Registration
@@ -54,4 +57,10 @@ en:
         login_as_guest_html: Register as a<br /> guest
         title: Choose your registration method
       menu:
-        guest_meeting_registration_settings: Unregistered user meeting registration settings
+        guest_meeting_registration_settings: Unregistered user meeting registration
+          settings
+    meetings:
+      registrations:
+        create:
+          confirmation_required: Complete your registration - check your email to
+            confirm your participation and reserve your seat
